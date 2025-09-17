@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { beforeAll, afterEach, afterAll, vi } from 'vitest';
 import { server } from './mocks/server';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (globalThis as any).IntersectionObserver = class IntersectionObserver {
   constructor() {}
   disconnect() {}
@@ -9,6 +10,7 @@ import { server } from './mocks/server';
   unobserve() {}
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (globalThis as any).ResizeObserver = class ResizeObserver {
   constructor() {}
   disconnect() {}
