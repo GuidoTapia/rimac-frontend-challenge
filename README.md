@@ -22,7 +22,7 @@ A modern React application built with TypeScript, Vite, and Sass for the Rimac F
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+gh repo clone GuidoTapia/rimac-frontend-challenge
 cd rimac-frontend-challenge
 ```
 
@@ -165,10 +165,19 @@ The project uses Sass with BEM methodology:
 
 ## 🌐 API Integration
 
-The project is configured to integrate with:
+The project is configured to integrate with a backend API. The base URL can be configured via environment variables:
 
-- User API: `https://rimac-front-end-challenge.netlify.app/api/user.json`
-- Plans API: `https://rimac-front-end-challenge.netlify.app/api/plans.json`
+- **Backend URL**: Configurable via `VITE_API_BASE_URL` environment variable
+- **User API**: `/api/user.json`
+- **Plans API**: `/api/plans.json`
+
+### Environment Configuration
+
+Create a `.env` file in the project root:
+
+```bash
+VITE_API_BASE_URL=https://your-backend-url.com
+```
 
 ## 📖 Documentation
 
@@ -176,15 +185,3 @@ The project is configured to integrate with:
 - [Requirements](./docs/requirements.md)
 - [Implementation Guidelines](./docs/implementation-guidelines.md)
 - [Project Structure](./docs/project-structure.md)
-
-## 🤝 Contributing
-
-1. Create a feature branch
-2. Make your changes
-3. Run tests and linting
-4. Commit with conventional commits
-5. Push and create a pull request
-
-## 📄 License
-
-This project is part of the Rimac Frontend Challenge.

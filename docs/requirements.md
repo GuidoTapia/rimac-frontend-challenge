@@ -13,8 +13,9 @@ This document outlines the specific requirements and deliverables for the Rimac 
 ## Development Resources
 
 - **Figma Design:** https://www.figma.com/file/KGftIKxhcVm41kTKMsfTh2/Frontend-Challenge-2023
-- **User API:** https://rimac-front-end-challenge.netlify.app/api/user.json
-- **Plans API:** https://rimac-front-end-challenge.netlify.app/api/plans.json
+- **Backend API:** Configurable via environment variables
+  - **User API:** `/api/user.json`
+  - **Plans API:** `/api/plans.json`
 
 ## Technical Requirements
 
