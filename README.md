@@ -1,69 +1,190 @@
-# React + TypeScript + Vite
+# Rimac Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application built with TypeScript, Vite, and Sass for the Rimac Frontend Challenge.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** with TypeScript
+- **Vite** for fast development and building
+- **Sass** with BEM methodology for styling
+- **Vitest** + **React Testing Library** for testing
+- **ESLint** + **Prettier** for code quality
+- **MSW** for API mocking
+- **Husky** for git hooks
 
-## Expanding the ESLint configuration
+## 📋 Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js 18+
+- pnpm (recommended) or npm
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. Clone the repository:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+git clone <repository-url>
+cd rimac-frontend-challenge
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+pnpm install
 ```
+
+## 🏃‍♂️ Development
+
+Start the development server:
+
+```bash
+pnpm dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## 🧪 Testing
+
+Run tests in watch mode:
+
+```bash
+pnpm test
+```
+
+Run tests once:
+
+```bash
+pnpm test:run
+```
+
+Run tests with coverage:
+
+```bash
+pnpm test:coverage
+```
+
+## 🔧 Code Quality
+
+Lint code:
+
+```bash
+pnpm lint
+```
+
+Fix linting issues:
+
+```bash
+pnpm lint:fix
+```
+
+Format code:
+
+```bash
+pnpm format
+```
+
+Check formatting:
+
+```bash
+pnpm format:check
+```
+
+Type checking:
+
+```bash
+pnpm type-check
+```
+
+## 🏗️ Build
+
+Build for production:
+
+```bash
+pnpm build
+```
+
+Preview production build:
+
+```bash
+pnpm preview
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Shared UI components
+├── features/           # Feature-based modules
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── services/           # API services
+├── store/              # State management
+├── styles/             # Sass stylesheets
+├── types/              # TypeScript types
+├── utils/              # Utility functions
+└── __tests__/          # Test files
+```
+
+## 🎨 Styling
+
+The project uses Sass with BEM methodology:
+
+- **Variables**: Colors, typography, spacing, breakpoints
+- **Mixins**: Responsive design, flexbox utilities
+- **Components**: Reusable UI components
+- **Layout**: Grid system and layout utilities
+
+## 🧪 Testing Strategy
+
+- **Unit Tests**: Component testing with React Testing Library
+- **Integration Tests**: API integration with MSW
+- **Coverage**: 80% minimum coverage requirement
+- **Mocking**: API mocking for consistent testing
+
+## 🔄 Git Workflow
+
+- **Conventional Commits**: Standardized commit messages
+- **Pre-commit Hooks**: Automatic linting and formatting
+- **Branch Protection**: Main branch protection rules
+- **Linear Integration**: Task tracking and progress
+
+## 📚 Available Scripts
+
+| Script          | Description                  |
+| --------------- | ---------------------------- |
+| `dev`           | Start development server     |
+| `build`         | Build for production         |
+| `preview`       | Preview production build     |
+| `test`          | Run tests in watch mode      |
+| `test:run`      | Run tests once               |
+| `test:coverage` | Run tests with coverage      |
+| `lint`          | Lint code                    |
+| `lint:fix`      | Fix linting issues           |
+| `format`        | Format code with Prettier    |
+| `format:check`  | Check code formatting        |
+| `type-check`    | Run TypeScript type checking |
+
+## 🌐 API Integration
+
+The project is configured to integrate with:
+
+- User API: `https://rimac-front-end-challenge.netlify.app/api/user.json`
+- Plans API: `https://rimac-front-end-challenge.netlify.app/api/plans.json`
+
+## 📖 Documentation
+
+- [Tech Stack Analysis](./docs/tech-stack-analysis.md)
+- [Requirements](./docs/requirements.md)
+- [Implementation Guidelines](./docs/implementation-guidelines.md)
+- [Project Structure](./docs/project-structure.md)
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Run tests and linting
+4. Commit with conventional commits
+5. Push and create a pull request
+
+## 📄 License
+
+This project is part of the Rimac Frontend Challenge.
