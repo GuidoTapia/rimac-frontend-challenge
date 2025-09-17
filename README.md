@@ -179,6 +179,20 @@ Create a `.env` file in the project root:
 VITE_API_BASE_URL=https://your-backend-url.com
 ```
 
+## 🔄 CI/CD & Workflow
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+- **PR Checks**: Automated linting, testing, type checking, and building on every pull request
+- **Security Audit**: Automated security vulnerability scanning
+- **Auto Deploy**: Automatic deployment to GitHub Pages on merge to main
+- **Branch Protection**: Main branch is protected with required status checks
+
+### Workflow Files
+
+- [PR Checks](.github/workflows/pr-checks.yml) - Quality checks for pull requests
+- [Deploy](.github/workflows/deploy.yml) - Production deployment
+
 ## 📖 Documentation
 
 - [Tech Stack Analysis](./docs/tech-stack-analysis.md)
