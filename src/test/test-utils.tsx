@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-import { ReactElement } from 'react';
-import { render, RenderOptions } from '@testing-library/react';
+import type { ReactElement } from 'react';
+import { render, type RenderOptions } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
