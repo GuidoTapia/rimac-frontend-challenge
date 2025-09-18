@@ -1,0 +1,30 @@
+@function rem($pixels, $base: 16) {
+  @return #{$pixels / $base}rem;
+}
+
+@function em($pixels, $base: 16) {
+  @return #{$pixels / $base}em;
+}
+
+@function rgba-color($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+@function contrast-ratio($color1, $color2) {
+  $l1: luminance($color1);
+  $l2: luminance($color2);
+  $ratio: ($l1 + 0.05) / ($l2 + 0.05);
+  @return if($l1 > $l2, $ratio, 1 / $ratio);
+}
+
+@function luminance($color) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  $red: if($red <= 10, $red / 3294, pow(($red / 269) + 0.0513, 2.4));
+  $green: if($green <= 10, $green / 3294, pow(($green / 269) + 0.0513, 2.4));
+  $blue: if($blue <= 10, $blue / 3294, pow(($blue / 269) + 0.0513, 2.4));
+
+  @return 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
+}

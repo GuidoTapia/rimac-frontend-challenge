@@ -1,6 +1,7 @@
 # Project Structure - Rimac Frontend Challenge
 
 ## Overview
+
 This document outlines the recommended file structure for the Rimac Frontend Challenge, focusing on feature-based organization with shared resources at the root level.
 
 ## Recommended Structure
@@ -133,11 +134,13 @@ src/
 ## Structure Principles
 
 ### 1. Feature-Based Organization
+
 - **Each feature is self-contained** with its own components, hooks, services, and types
 - **Features are independent** and can be developed/modified without affecting others
 - **Clear boundaries** between different business domains
 
 ### 2. Shared Resources at Root Level
+
 - **Components/** - Reusable UI components used across features
 - **Hooks/** - Global custom hooks for common functionality
 - **Services/** - API clients and global services
@@ -145,5 +148,6 @@ src/
 - **Types/** - Global TypeScript interfaces
 
 ### 3. Minimal Index Files
+
 - **Avoid index files at every level** - Only use them when they provide clear value
 - **Direct imports preferred** - Import components directly from their files
