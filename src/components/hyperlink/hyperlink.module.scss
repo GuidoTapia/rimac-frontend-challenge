@@ -1,0 +1,52 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as m;
+@use 'sass:color';
+
+.hyperlink {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease;
+
+  &__label {
+    line-height: 1;
+  }
+  &__icon {
+    font-size: 0.9em;
+  }
+
+  &--sm {
+    font-size: 0.9rem;
+  }
+  &--md {
+    font-size: 1rem;
+  }
+  &--underline {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  &--primary {
+    color: $primary-color;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  &--muted {
+    color: $info-color;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  &--danger {
+    color: $danger-color;
+    &:hover {
+      opacity: 0.95;
+    }
+  }
+}

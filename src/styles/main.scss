@@ -1,10 +1,10 @@
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/functions';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins';
+@use 'abstracts/functions';
 
-@import 'base/reset';
-@import 'base/typography';
+@use 'base/reset';
+@use 'base/typography';
 
-@import 'layout/grid';
+@use 'layout/grid';
 
-@import 'components/globals';
+@use 'components/globals';

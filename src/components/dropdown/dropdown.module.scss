@@ -1,0 +1,63 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as m;
+@use 'sass:color';
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  color: $dark-color;
+  border: 1px solid $border-color;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-md;
+
+  &--fullWidth {
+    width: 100%;
+  }
+  &--error .dropdown__select {
+    border-color: $danger-color;
+  }
+
+  &--sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.9rem;
+  }
+  &--md {
+    padding: $spacing-sm $spacing-md;
+    font-size: 1rem;
+  }
+  &--lg {
+    padding: $spacing-md $spacing-lg;
+    font-size: 1.0625rem;
+  }
+
+  &__label {
+    font-weight: $font-weight-normal;
+    font-size: 12px;
+  }
+
+  &__wrap {
+    position: relative;
+  }
+  &__select {
+    @include m.input-base;
+  }
+
+  &__icon {
+    position: absolute;
+    right: $spacing-sm;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.9rem;
+    color: $info-color;
+  }
+  &__helper {
+    font-size: 0.85rem;
+    color: $info-color;
+  }
+  &__error {
+    font-size: 0.85rem;
+    color: $danger-color;
+  }
+}

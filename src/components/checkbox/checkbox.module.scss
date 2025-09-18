@@ -1,0 +1,71 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as m;
+@use 'sass:color';
+
+.checkbox {
+  display: grid;
+  grid-template-columns: 1.15rem auto;
+  align-items: center;
+  gap: $spacing-md;
+  cursor: pointer;
+  color: $dark-color;
+
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  &--error .checkbox__box {
+    border-color: $danger-color;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__box {
+    width: 20px;
+    height: 20px;
+    border-radius: $border-radius-sm;
+    border: 2px solid $border-color;
+    background: #fff;
+    display: inline-block;
+    transition:
+      border-color 0.15s ease,
+      background 0.15s ease;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 6px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) scale(0);
+      transform-origin: center;
+      margin: 3px 3px;
+      transition: transform 0.12s ease;
+    }
+  }
+
+  &__label {
+    font-size: 0.95rem;
+  }
+  &__error {
+    grid-column: 2 / -1;
+    font-size: 0.85rem;
+    color: $danger-color;
+    margin-top: $spacing-xs;
+  }
+
+  &__input:checked + .checkbox__box {
+    background: $dark-color;
+    border-color: $dark-color;
+  }
+  &__input:checked + .checkbox__box::after {
+    transform: rotate(-45deg) scale(1);
+  }
+  &__input:focus-visible + .checkbox__box {
+    @include m.focus-ring($dark-color);
+  }
+}

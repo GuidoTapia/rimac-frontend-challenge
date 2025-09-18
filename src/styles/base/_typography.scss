@@ -1,3 +1,8 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins';
+@use '../abstracts/functions';
+@use 'sass:color';
+
 h1,
 h2,
 h3,
@@ -10,51 +15,51 @@ h6 {
 }
 
 h1 {
-  font-size: rem(32);
+  font-size: 32;
   font-weight: $font-weight-bold;
 
-  @include respond-to(tablet) {
-    font-size: rem(40);
+  @include mixins.respond-to(tablet) {
+    font-size: 40;
   }
 }
 
 h2 {
-  font-size: rem(28);
+  font-size: 28;
 
-  @include respond-to(tablet) {
-    font-size: rem(32);
+  @include mixins.respond-to(tablet) {
+    font-size: 32;
   }
 }
 
 h3 {
-  font-size: rem(24);
+  font-size: 24;
 
-  @include respond-to(tablet) {
-    font-size: rem(28);
+  @include mixins.respond-to(tablet) {
+    font-size: 28;
   }
 }
 
 h4 {
-  font-size: rem(20);
+  font-size: 20;
 
-  @include respond-to(tablet) {
-    font-size: rem(24);
+  @include mixins.respond-to(tablet) {
+    font-size: 24;
   }
 }
 
 h5 {
-  font-size: rem(18);
+  font-size: 18;
 
-  @include respond-to(tablet) {
-    font-size: rem(20);
+  @include mixins.respond-to(tablet) {
+    font-size: 20;
   }
 }
 
 h6 {
-  font-size: rem(16);
+  font-size: 16;
 
-  @include respond-to(tablet) {
-    font-size: rem(18);
+  @include mixins.respond-to(tablet) {
+    font-size: 18;
   }
 }
 
@@ -69,7 +74,7 @@ a {
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: darken($primary-color, 10%);
+    color: color.adjust($primary-color, $lightness: -10%);
   }
 
   &:focus-visible {
@@ -91,7 +96,7 @@ a {
 }
 
 .text-truncate {
-  @include text-truncate;
+  @include mixins.text-truncate;
 }
 
 .font-normal {
