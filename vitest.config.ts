@@ -44,4 +44,7 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, './src/styles'),
     },
   },
+  define: {
+    global: 'globalThis',
+  },
 });

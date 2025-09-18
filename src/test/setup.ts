@@ -2,6 +2,11 @@ import '@testing-library/jest-dom';
 import { beforeAll, afterEach, afterAll, vi } from 'vitest';
 import { server } from './mocks/server';
 
+// Polyfill for webidl-conversions in test environment
+if (typeof globalThis.global === 'undefined') {
+  globalThis.global = globalThis;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 (globalThis as any).IntersectionObserver = class IntersectionObserver {
   constructor() {}
