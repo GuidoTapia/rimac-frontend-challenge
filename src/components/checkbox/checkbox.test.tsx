@@ -5,12 +5,12 @@ import userEvent from '@testing-library/user-event';
 import Checkbox from './checkbox';
 
 describe('Checkbox component', () => {
-  it('renderiza el label cuando se pasa la prop "label"', () => {
+  it('renders the label when "label" prop is provided', () => {
     render(<Checkbox label='Acepto términos' />);
     expect(screen.getByText('Acepto términos')).toBeInTheDocument();
   });
 
-  it('no renderiza el contenedor de error cuando no hay "error"', () => {
+  it('does not render error container when no "error" is provided', () => {
     render(<Checkbox label='Demo' />);
     expect(screen.queryByText(/.+/)).not.toHaveClass?.('checkbox__error');
 
@@ -18,14 +18,14 @@ describe('Checkbox component', () => {
     expect(input).toHaveAttribute('aria-invalid', 'false');
   });
 
-  it('setea aria-invalid y muestra el mensaje cuando hay "error"', () => {
+  it('sets aria-invalid and shows message when "error" is present', () => {
     render(<Checkbox label='Demo' error='Campo requerido' />);
     const input = screen.getByRole('checkbox');
     expect(input).toHaveAttribute('aria-invalid', 'true');
     expect(screen.getByText('Campo requerido')).toBeInTheDocument();
   });
 
-  it('dispara onChange al hacer click y al presionar Space cuando está enfocado', async () => {
+  it('fires onChange when clicked and when pressing Space while focused', async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();
     render(<Checkbox label='Notificaciones' onChange={onChange} />);
@@ -40,7 +40,7 @@ describe('Checkbox component', () => {
     expect(onChange).toHaveBeenCalledTimes(2);
   });
 
-  it('aplica la prop "disabled": deshabilita el input y agrega clase de estado', () => {
+  it('applies "disabled" prop: disables input and adds disabled class', () => {
     render(<Checkbox label='Demo' disabled />);
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toBeDisabled();
@@ -49,19 +49,19 @@ describe('Checkbox component', () => {
     expect(root?.className).toMatch(/checkbox--disabled/);
   });
 
-  it('agrega clase de error al root cuando "error" está presente', () => {
+  it('adds error class to root when "error" is present', () => {
     render(<Checkbox label='Demo' error='Oops' />);
     const root = screen.getByText('Demo').closest('label');
     expect(root?.className).toMatch(/checkbox--error/);
   });
 
-  it('acepta y fusiona className personalizado en el root', () => {
+  it('accepts and merges custom className on the root', () => {
     render(<Checkbox label='Demo' className='extra-class' />);
     const root = screen.getByText('Demo').closest('label');
     expect(root).toHaveClass('extra-class');
   });
 
-  it('reenvía correctamente el ref al <input>', () => {
+  it('forwards ref correctly to the <input>', () => {
     const ref = createRef<HTMLInputElement>();
     render(<Checkbox label='Demo' ref={ref} />);
     expect(ref.current).toBeInstanceOf(HTMLInputElement);
@@ -70,7 +70,7 @@ describe('Checkbox component', () => {
     expect(document.activeElement).toBe(ref.current);
   });
 
-  it('propaga atributos nativos (name, id, checked, defaultChecked)', () => {
+  it('propagates native attributes (name, id, checked, defaultChecked)', () => {
     render(
       <Checkbox
         label='Boletín'
@@ -86,7 +86,7 @@ describe('Checkbox component', () => {
     expect((checkbox as HTMLInputElement).checked).toBe(true);
   });
 
-  it('funciona como controlado cuando se pasa "checked"', async () => {
+  it('works as controlled when "checked" is passed', async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();
     const { rerender } = render(
@@ -102,7 +102,7 @@ describe('Checkbox component', () => {
     expect(checkbox).toBeChecked();
   });
 
-  it('renderiza sin label ni error (estructura mínima)', () => {
+  it('renders without label or error (minimal structure)', () => {
     render(<Checkbox data-testid='chk' />);
     const checkbox = screen.getByTestId('chk');
     expect(checkbox).toBeInTheDocument();
