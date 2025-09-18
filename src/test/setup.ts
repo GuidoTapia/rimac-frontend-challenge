@@ -2,9 +2,8 @@ import '@testing-library/jest-dom';
 import { beforeAll, afterEach, afterAll, vi } from 'vitest';
 import { server } from './mocks/server';
 
-// Polyfill for webidl-conversions in test environment
-if (typeof globalThis.global === 'undefined') {
-  globalThis.global = globalThis;
+if (typeof (globalThis as any).global === 'undefined') {
+  (globalThis as any).global = globalThis;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
