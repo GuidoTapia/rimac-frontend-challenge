@@ -4,7 +4,7 @@ import styles from './text-input.module.scss';
 export type TextInputSize = 'sm' | 'md' | 'lg';
 
 export interface TextInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: string;
   helperText?: string;
   error?: string;

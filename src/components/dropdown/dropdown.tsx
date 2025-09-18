@@ -10,7 +10,7 @@ export interface Option {
 }
 
 export interface DropdownProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
   label?: string;
   helperText?: string;
   error?: string;

@@ -27,15 +27,15 @@ describe('Dropdown', () => {
     const root =
       screen.getByTestId('dropdown-root') ||
       screen.getByRole('combobox').closest('div');
-    expect(root.className).toMatch(/dropdown--md/);
+    expect(root?.className).toMatch(/dropdown--md/);
     rerender(<Dropdown id='mydd' options={baseOptions} size='lg' />);
-    expect(root.className).toMatch(/dropdown--lg/);
+    expect(root?.className).toMatch(/dropdown--lg/);
   });
 
   it('applies fullWidth class', () => {
     renderDropdown({ fullWidth: true });
     const root = screen.getByTestId('dropdown-root').closest('div');
-    expect(root.className).toMatch(/dropdown--fullWidth/);
+    expect(root?.className).toMatch(/dropdown--fullWidth/);
   });
 
   it('shows helperText when no error and sets aria-describedby', () => {
@@ -53,7 +53,7 @@ describe('Dropdown', () => {
     expect(sel).toHaveAttribute('aria-invalid', 'true');
     expect(sel).toHaveAttribute('aria-describedby', 'mydd-err');
     const root = screen.getByTestId('dropdown-root');
-    expect(root.className).toMatch(/dropdown--error/);
+    expect(root?.className).toMatch(/dropdown--error/);
   });
 
   it('disables options marked as disabled', () => {
