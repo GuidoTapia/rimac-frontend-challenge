@@ -2,7 +2,9 @@ import '@testing-library/jest-dom';
 import { beforeAll, afterEach, afterAll, vi } from 'vitest';
 import { server } from './mocks/server';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 if (typeof (globalThis as any).global === 'undefined') {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (globalThis as any).global = globalThis;
 }
 
