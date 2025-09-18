@@ -1,8 +1,8 @@
-@function rem($pixels, $base: 16) {
+@function rem-convert($pixels, $base: 16) {
   @return #{$pixels / $base}rem;
 }
 
-@function em($pixels, $base: 16) {
+@function em-convert($pixels, $base: 16) {
   @return #{$pixels / $base}em;
 }
 

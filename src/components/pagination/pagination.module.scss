@@ -1,0 +1,58 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as m;
+@use 'sass:color';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+
+  &--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &__pages {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: 16px;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid $secondary-color;
+    color: $secondary-color;
+    font-weight: $font-weight-semibold;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
+    &:hover {
+      background: $light-color;
+    }
+  }
+  &__control--disabled {
+    border: 2px solid $neutral-color;
+    color: $neutral-color;
+  }
+
+  &__page--active {
+    background: $primary-color;
+    color: #fff;
+    border-color: $primary-color;
+  }
+
+  &__ellipsis {
+    padding: 0 0.4rem;
+    user-select: none;
+  }
+}

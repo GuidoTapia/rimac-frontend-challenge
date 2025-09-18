@@ -1,0 +1,82 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as m;
+@use 'sass:color';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &--small {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.875rem;
+  }
+  &--x-large {
+    padding: $spacing-xl $spacing-xxl;
+    font-size: 1.125rem;
+    height: 64px;
+    border-radius: 32px;
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    color: $light-color;
+
+    &:hover:not(.button--disabled):not(:disabled) {
+      background-color: color.adjust($primary-color, $lightness: -10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: $light-color;
+
+    &:hover:not(.button--disabled):not(:disabled) {
+      background-color: color.adjust($secondary-color, $lightness: -10%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover:not(.button--disabled):not(:disabled) {
+      background-color: $primary-color;
+      color: $light-color;
+    }
+  }
+
+  &--danger {
+    background-color: $danger-color;
+    color: $light-color;
+
+    &:hover:not(.button--disabled):not(:disabled) {
+      background-color: color.adjust($danger-color, $lightness: -8%);
+    }
+  }
+
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  &:focus-visible {
+    @include m.focus-ring($primary-color);
+  }
+
+  &__label {
+    pointer-events: none;
+  }
+}

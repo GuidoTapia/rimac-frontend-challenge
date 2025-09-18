@@ -1,0 +1,56 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as m;
+@use 'sass:color';
+
+.textbutton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-base;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease;
+
+  &__label {
+    line-height: 1;
+  }
+
+  &--sm {
+    font-size: 0.9rem;
+  }
+  &--md {
+    font-size: 1rem;
+  }
+
+  &--underline {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  &--primary {
+    color: $primary-color;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  &--secondary {
+    color: $secondary-color;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  &--danger {
+    color: $danger-color;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

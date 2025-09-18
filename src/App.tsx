@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
+import Button from './components/button/button';
+import {
+  Checkbox,
+  Dropdown,
+  Hyperlink,
+  Pagination,
+  Stepper,
+  TextInput,
+} from './components';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,6 +24,22 @@ function App() {
           <img src={reactLogo} alt='React logo' />
         </a>
       </div>
+      <Button>Click me</Button>
+      <Hyperlink>Click me</Hyperlink>
+      <TextInput label='Hola' />
+      <Checkbox label='Hola' />
+      <Dropdown
+        label='Hola'
+        options={[
+          { value: 'Hola', label: 'Hola' },
+          { value: 'Mundo', label: 'Mundo' },
+        ]}
+      />
+      <Stepper
+        steps={[{ label: 'Hola' }, { label: 'Mundo' }]}
+        activeIndex={1}
+      />
+      <Pagination currentPage={1} totalPages={10} onPageChange={() => {}} />
 
       <h1 className='text-center mb-4'>Vite + React + Sass</h1>
 

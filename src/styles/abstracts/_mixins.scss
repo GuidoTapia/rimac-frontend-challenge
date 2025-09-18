@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
     @media (min-width: $breakpoint-mobile) {
@@ -33,24 +35,13 @@
   flex-direction: column;
 }
 
-@mixin button-base {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: $spacing-sm $spacing-md;
-  border: none;
-  border-radius: $border-radius-md;
-  font-family: $font-family-base;
+@mixin input-base {
+  width: 100%;
+  padding: 0px;
+  border: 0;
   font-size: $font-size-base;
-  font-weight: $font-weight-medium;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+  background: transparent;
+  outline: 0;
 }
 
 @mixin card-base {
@@ -77,4 +68,9 @@
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+@mixin focus-ring($color: $primary-color) {
+  outline: 2px solid $color;
+  outline-offset: 0px;
 }
