@@ -43,23 +43,25 @@ const CotizationOptions: React.FC<CotizationOptionsProps> = ({
   return (
     <div className={styles.cotizationOptions}>
       <div className={styles.cotizationOptions__header}>
-        <h2 className={styles.cotizationOptions__title}>
+        <h1 className={styles.cotizationOptions__title}>
           {userName} ¿Para quién deseas cotizar?
-        </h2>
+        </h1>
         <p className={styles.cotizationOptions__description}>
           Selecciona la opción que se ajuste más a tus necesidades.
         </p>
       </div>
       <div className={styles.cotizationOptions__content}>
         {cotizationOptions.map(option => (
-          <CotizationOption
-            key={option.value}
-            icon={option.icon}
-            title={option.title}
-            description={option.description}
-            onClick={() => onOptionSelect(option.value)}
-            isSelected={selectedOption === option.value}
-          />
+          <div key={option.value} className={styles.cotizationOptions__option}>
+            <CotizationOption
+              key={option.value}
+              icon={option.icon}
+              title={option.title}
+              description={option.description}
+              onClick={() => onOptionSelect(option.value)}
+              isSelected={selectedOption === option.value}
+            />
+          </div>
         ))}
       </div>
     </div>

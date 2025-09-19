@@ -50,10 +50,18 @@ const Home: React.FC = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className={styles['home__form-container__header']}>
-            <div className={styles['home__form-container__title']}>
-              <Tag>Seguro Salud Flexible</Tag>
-              <h1>Creado para ti y tu familia</h1>
+            <div className={styles['home__form-container__header__container']}>
+              <div className={styles['home__form-container__title']}>
+                <Tag>Seguro Salud Flexible</Tag>
+                <h1>Creado para ti y tu familia</h1>
+              </div>
+              <div className={styles['home__form-container__header__image']}>
+                <img src={family} alt='Home' />
+              </div>
             </div>
+            <div
+              className={styles['home__form-container__header__separator']}
+            />
 
             <p className={styles['home__form-container__description']}>
               Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra

@@ -6,6 +6,7 @@ export interface PaperProps {
   className?: string;
   shadow?: 'sm' | 'md' | 'lg' | 'none';
   width?: string | number;
+  maxWidth?: string | number;
   height?: string | number;
   withBorder?: boolean;
   onClick?: () => void;
