@@ -1,0 +1,107 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as m;
+@use 'sass:color';
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $font-family-base;
+  background: $light-color;
+  color: $dark-color;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &--login {
+    background-image:
+      radial-gradient(
+        ellipse 30% 100% at left 80%,
+        rgba(180, 64, 255, 0.9) 0%,
+        rgba(180, 64, 255, 0.4) 20%,
+        rgba(180, 64, 255, 0) 60%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 30% 100% at right 30%,
+        rgba(0, 255, 255, 0.9) 0%,
+        rgba(0, 255, 255, 0.3) 20%,
+        rgba(0, 255, 255, 0) 60%,
+        transparent 70%
+      );
+  }
+
+  &--login &__header {
+    background-color: transparent;
+  }
+
+  &__header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-sm 120px;
+    background-color: $light-color;
+    color: $dark-color;
+    font-weight: $font-weight-semibold;
+    height: 64px;
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-sm 24px;
+    }
+  }
+
+  &__header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  &__footer-right {
+    font-size: 14px;
+    font-weight: $font-weight-normal;
+  }
+  &__header-slogan {
+    font-size: 12px;
+    font-weight: $font-weight-semibold;
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    padding: $spacing-lg;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 120px;
+    flex-shrink: 0;
+    background-color: $dark-color;
+    color: $light-color;
+    font-size: 0.9rem;
+    text-align: center;
+    height: 106px;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-xl;
+      height: 152px;
+      padding: 32px 24px;
+    }
+  }
+
+  &__footer-separator {
+    height: 0;
+    width: 100%;
+    border-bottom: 0.5px solid $border-color;
+    display: none;
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+    }
+  }
+}

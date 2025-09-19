@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './text-button.module.scss';
 
-export type TextButtonVariant = 'primary' | 'secondary' | 'danger';
+export type TextButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'danger'
+  | 'light'
+  | 'dark';
 export type TextButtonSize = 'sm' | 'md';
 
 export interface TextButtonProps
@@ -9,6 +14,7 @@ export interface TextButtonProps
   variant?: TextButtonVariant;
   size?: TextButtonSize;
   underline?: boolean;
+  icon?: React.ReactNode;
 }
 
 const TextButton: React.FC<TextButtonProps> = ({
@@ -17,6 +23,7 @@ const TextButton: React.FC<TextButtonProps> = ({
   size = 'md',
   underline = false,
   className,
+  icon,
   ...rest
 }) => {
   const classes = [
@@ -31,6 +38,7 @@ const TextButton: React.FC<TextButtonProps> = ({
 
   return (
     <button className={classes} {...rest}>
+      {icon && <span className={styles['textbutton__icon']}>{icon}</span>}
       <span className={styles['textbutton__label']}>{children}</span>
     </button>
   );

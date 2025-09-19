@@ -5,3 +5,5 @@ export { default as TextInput } from './text-input/text-input';
 export { default as Dropdown } from './dropdown/dropdown';
 export { default as Stepper } from './stepper/stepper';
 export { default as Pagination } from './pagination/pagination';
+export { default as Layout } from './layout/layout';
+export { default as RimacLogo } from './rimac-logo/rimac-logo';

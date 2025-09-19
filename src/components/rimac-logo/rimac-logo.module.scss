@@ -1,0 +1,22 @@
+@use '../../styles/abstracts/variables' as *;
+
+.logo {
+  display: inline-block;
+
+  & path {
+    fill: currentColor;
+  }
+
+  &--primary {
+    color: $primary-color;
+  }
+  &--secondary {
+    color: $secondary-color;
+  }
+  &--dark {
+    color: $dark-color;
+  }
+  &--light {
+    color: $light-color;
+  }
+}

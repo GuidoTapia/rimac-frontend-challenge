@@ -3,19 +3,27 @@
 @use 'sass:color';
 
 .textbutton {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
   background: transparent;
   border: none;
   padding: 0;
   margin: 0;
   font-family: $font-family-base;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
   cursor: pointer;
+  font-size: 18px;
   transition:
     opacity 0.15s ease,
     color 0.15s ease;
 
   &__label {
     line-height: 1;
+  }
+  &__icon {
+    height: 20px;
+    width: 20px;
   }
 
   &--sm {
@@ -46,6 +54,12 @@
     color: $danger-color;
     &:hover {
       opacity: 0.9;
+    }
+  }
+  &--light {
+    color: $light-color;
+    &:hover {
+      opacity: 0.85;
     }
   }
 
