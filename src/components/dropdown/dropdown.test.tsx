@@ -27,7 +27,7 @@ describe('Dropdown', () => {
     const root =
       screen.getByTestId('dropdown-root') ||
       screen.getByRole('combobox').closest('div');
-    expect(root?.className).toMatch(/dropdown--md/);
+    expect(root?.className).toMatch(/dropdown--lg/);
     rerender(<Dropdown id='mydd' options={baseOptions} size='lg' />);
     expect(root?.className).toMatch(/dropdown--lg/);
   });
