@@ -4,6 +4,7 @@ import styles from './stepper.module.scss';
 export interface Step {
   label: string;
   optional?: string;
+  value?: string;
 }
 
 export interface StepperProps {

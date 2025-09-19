@@ -14,6 +14,7 @@ type IAuth = {
     phone: string;
   }) => void;
   logOut: () => void;
+  userAge?: number;
 };
 
 export const UserContext = createContext<IAuth>({
