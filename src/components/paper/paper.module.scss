@@ -1,0 +1,24 @@
+@use '../../styles/abstracts/variables' as *;
+
+.paper {
+  background: $light-color;
+  border-radius: $border-radius-lg;
+  border: none;
+
+  &--with-border {
+    border: 3px solid $dark-color;
+  }
+
+  &--shadow-none {
+    box-shadow: none;
+  }
+  &--shadow-sm {
+    box-shadow: $shadow-sm;
+  }
+  &--shadow-md {
+    box-shadow: $shadow-md;
+  }
+  &--shadow-lg {
+    box-shadow: $shadow-lg;
+  }
+}

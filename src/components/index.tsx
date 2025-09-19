@@ -7,3 +7,4 @@ export { default as Stepper } from './stepper/stepper';
 export { default as Pagination } from './pagination/pagination';
 export { default as Layout } from './layout/layout';
 export { default as RimacLogo } from './rimac-logo/rimac-logo';
+export { default as Paper } from './paper/paper';

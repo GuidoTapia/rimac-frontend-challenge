@@ -1,0 +1,117 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+.plan-option {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 32px 24px 32px;
+    height: 100%;
+    gap: 24px;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid $neutral-color;
+    padding-bottom: 24px;
+    width: 100%;
+  }
+  &__header-badge {
+    width: 100%;
+    height: 20px;
+  }
+  &__header-content {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-lg;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &__header-price {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &__header-subtitle {
+    font-size: 12px;
+    color: $neutral-color;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+  &__header-original-price {
+    font-size: 14px;
+    color: $neutral-color;
+    font-weight: $font-weight-normal;
+    text-decoration: line-through;
+  }
+
+  &__radio-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid $neutral-color;
+    background-color: $light-color;
+    position: relative; // needed so ::after positions relative to this
+
+    &::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 6px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) scale(0);
+      transform-origin: center;
+      margin: 6px 5px;
+      transition: transform 0.12s ease;
+    }
+
+    &--selected {
+      border-color: $success-color;
+      background-color: $success-color;
+
+      &::after {
+        transform: rotate(-45deg) scale(1);
+      }
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    height: 100%;
+    flex: 1;
+  }
+  &__description {
+    font-size: 16px;
+    display: list-item;
+  }
+  &__description-list {
+    list-style: disc;
+    padding-left: $spacing-md; // e.g., 1rem
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    ::marker {
+      font-size: 20px;
+    }
+  }
+}
