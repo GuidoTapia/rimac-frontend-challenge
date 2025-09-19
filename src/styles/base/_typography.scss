@@ -11,12 +11,12 @@ h5,
 h6 {
   font-weight: $font-weight-semibold;
   line-height: 1.2;
-  margin-bottom: $spacing-md;
 }
 
 h1 {
   font-size: 32;
   font-weight: $font-weight-bold;
+  line-height: 40px;
 
   @include mixins.respond-to(tablet) {
     font-size: 40;
@@ -25,6 +25,7 @@ h1 {
 
 h2 {
   font-size: 28;
+  line-height: 32px;
 
   @include mixins.respond-to(tablet) {
     font-size: 32;
@@ -33,6 +34,7 @@ h2 {
 
 h3 {
   font-size: 24;
+  line-height: 32px;
 
   @include mixins.respond-to(tablet) {
     font-size: 28;
@@ -41,6 +43,7 @@ h3 {
 
 h4 {
   font-size: 20;
+  line-height: 28px;
 
   @include mixins.respond-to(tablet) {
     font-size: 24;
@@ -49,6 +52,7 @@ h4 {
 
 h5 {
   font-size: 18;
+  line-height: 24px;
 
   @include mixins.respond-to(tablet) {
     font-size: 20;
@@ -57,6 +61,7 @@ h5 {
 
 h6 {
   font-size: 16;
+  line-height: 20px;
 
   @include mixins.respond-to(tablet) {
     font-size: 18;

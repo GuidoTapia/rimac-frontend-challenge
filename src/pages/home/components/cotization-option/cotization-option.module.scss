@@ -1,0 +1,58 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+.cotization-option {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-lg 24px;
+  }
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__radio-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid $neutral-color;
+    background-color: $light-color;
+    position: relative; // needed so ::after positions relative to this
+
+    &::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 6px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) scale(0);
+      transform-origin: center;
+      margin: 6px 5px;
+      transition: transform 0.12s ease;
+    }
+
+    &--selected {
+      border-color: $success-color;
+      background-color: $success-color;
+
+      &::after {
+        transform: rotate(-45deg) scale(1);
+      }
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+  &__description {
+    font-size: 12px;
+  }
+}

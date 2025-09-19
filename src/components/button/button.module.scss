@@ -10,18 +10,32 @@
   border: none;
   font-family: $font-family-base;
   font-size: $font-size-base;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-bold;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &--small {
     padding: $spacing-xs $spacing-sm;
-    font-size: 0.875rem;
+    font-size: 14px;
+    height: 24px;
+    border-radius: 12px;
+  }
+  &--medium {
+    padding: $spacing-sm $spacing-md;
+    font-size: 18px;
+    height: 48px;
+    border-radius: 24px;
+  }
+  &--large {
+    padding: $spacing-md $spacing-lg;
+    font-size: 18px;
+    height: 56px;
+    border-radius: 28px;
   }
   &--x-large {
     padding: $spacing-xl $spacing-xxl;
-    font-size: 1.125rem;
+    font-size: 20px;
     height: 64px;
     border-radius: 32px;
   }
