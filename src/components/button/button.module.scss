@@ -81,6 +81,15 @@
       background-color: color.adjust($danger-color, $lightness: -8%);
     }
   }
+  &--dark {
+    background-color: $dark-color;
+    color: $light-color;
+
+    &:hover:not(.button--disabled):not(:disabled) {
+      background-color: color.adjust($dark-color, $lightness: 20%);
+      color: color.adjust($light-color, $lightness: -10%);
+    }
+  }
 
   &--disabled {
     opacity: 0.6;

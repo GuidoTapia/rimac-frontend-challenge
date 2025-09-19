@@ -12,7 +12,7 @@ describe('TextInput', () => {
     renderTI();
     const input = screen.getByRole('textbox');
     const root = input.closest('div');
-    expect(root?.className).toMatch(/textinput--md/);
+    expect(root?.className).toMatch(/textinput--lg/);
   });
 
   it('renders label when provided and associates it with input', () => {

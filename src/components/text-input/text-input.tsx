@@ -10,6 +10,7 @@ export interface TextInputProps
   error?: string;
   size?: TextInputSize;
   fullWidth?: boolean;
+  groupVariant?: 'left' | 'right';
 }
 
 const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
@@ -18,9 +19,10 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       label,
       helperText,
       error,
-      size = 'md',
+      size = 'lg',
       fullWidth = false,
       className,
+      groupVariant,
       ...rest
     },
     ref
@@ -31,6 +33,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       fullWidth ? styles['textinput--fullWidth'] : '',
       error ? styles['textinput--error'] : '',
       className,
+      groupVariant ? styles[`textinput--group-${groupVariant}`] : '',
     ]
       .filter(Boolean)
       .join(' ');

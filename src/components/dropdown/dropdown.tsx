@@ -17,6 +17,7 @@ export interface DropdownProps
   size?: DropdownSize;
   options: Option[];
   fullWidth?: boolean;
+  groupVariant?: 'left' | 'right';
 }
 
 const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(
@@ -25,10 +26,11 @@ const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(
       label,
       helperText,
       error,
-      size = 'md',
+      size = 'lg',
       options,
       fullWidth = false,
       className,
+      groupVariant,
       ...rest
     },
     ref
@@ -40,6 +42,7 @@ const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(
       fullWidth ? styles['dropdown--fullWidth'] : '',
       error ? styles['dropdown--error'] : '',
       className,
+      groupVariant ? styles[`dropdown--group-${groupVariant}`] : '',
     ]
       .filter(Boolean)
       .join(' ');
@@ -76,9 +79,6 @@ const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(
               </option>
             ))}
           </select>
-          <span className={styles['dropdown__icon']} aria-hidden>
-            ▾
-          </span>
         </div>
         {helperText && !error && (
           <div id={`${id}-help`} className={styles['dropdown__helper']}>

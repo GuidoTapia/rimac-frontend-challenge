@@ -5,7 +5,6 @@
 .textinput {
   display: flex;
   flex-direction: column;
-  gap: $spacing-xs;
   color: $dark-color;
   border: 1px solid $border-color;
   padding: $spacing-sm $spacing-lg;
@@ -31,13 +30,15 @@
     font-size: 1rem;
   }
   &--lg {
-    padding: $spacing-md $spacing-lg;
+    padding: $spacing-sm $spacing-lg;
     font-size: 1.0625rem;
+    height: 56px;
   }
 
   &__label {
     font-weight: $font-weight-normal;
     font-size: 12px;
+    color: $info-color;
   }
 
   &__field {
@@ -50,5 +51,13 @@
   &__error {
     font-size: 12px;
     color: $danger-color;
+  }
+  &--group-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &--group-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }

@@ -12,6 +12,7 @@
   transition:
     opacity 0.15s ease,
     color 0.15s ease;
+  text-decoration: underline;
 
   &__label {
     line-height: 1;
@@ -21,10 +22,10 @@
   }
 
   &--sm {
-    font-size: 0.9rem;
+    font-size: 8px;
   }
   &--md {
-    font-size: 1rem;
+    font-size: 12px;
   }
   &--underline {
     text-decoration: underline;
@@ -32,7 +33,7 @@
   }
 
   &--primary {
-    color: $primary-color;
+    color: $dark-color;
     &:hover {
       opacity: 0.85;
     }

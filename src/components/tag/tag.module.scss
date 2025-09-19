@@ -1,0 +1,48 @@
+@use '../../styles/abstracts/variables' as *;
+
+.tag {
+  display: flex;
+  padding: $spacing-xs $spacing-sm;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  border-radius: $border-radius-sm;
+  line-height: 1;
+  white-space: nowrap;
+  height: 24px;
+
+  &--primary {
+    background: linear-gradient(86.01deg, #00f4e2 0%, #00ff7f 100%);
+
+    color: $dark-color;
+  }
+
+  &--secondary {
+    background: linear-gradient(
+      135deg,
+      $secondary-color 0%,
+      $secondary-color,
+      15% 100%
+    );
+    color: $dark-color;
+  }
+
+  &--success {
+    background: linear-gradient(
+      135deg,
+      $success-color 0%,
+      $success-color,
+      15% 100%
+    );
+    color: $dark-color;
+  }
+
+  &--danger {
+    background: linear-gradient(
+      135deg,
+      $danger-color 0%,
+      $danger-color,
+      15% 100%
+    );
+    color: $dark-color;
+  }
+}
