@@ -7,6 +7,7 @@ export interface CotizationOptionProps {
   title: string;
   description: string;
   isSelected?: boolean;
+  onClick?: () => void;
 }
 
 const CotizationOption: React.FC<CotizationOptionProps> = ({
@@ -14,6 +15,7 @@ const CotizationOption: React.FC<CotizationOptionProps> = ({
   title,
   description,
   isSelected,
+  onClick,
 }) => {
   const radioCheckboxClasses = [
     styles['cotization-option__radio-checkbox'],
@@ -23,7 +25,12 @@ const CotizationOption: React.FC<CotizationOptionProps> = ({
     .join(' ');
 
   return (
-    <Paper width='256px' height='212px' withBorder={isSelected}>
+    <Paper
+      width='256px'
+      height='212px'
+      withBorder={isSelected}
+      onClick={onClick}
+    >
       <div className={styles['cotization-option__container']}>
         <div className={styles['cotization-option__header']}>
           <div className={radioCheckboxClasses} />

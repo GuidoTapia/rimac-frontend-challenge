@@ -8,15 +8,17 @@ export interface PaperProps {
   width?: string | number;
   height?: string | number;
   withBorder?: boolean;
+  onClick?: () => void;
 }
 
 const Paper: React.FC<PaperProps> = ({
   children,
   className,
-  shadow = 'md',
+  shadow = 'lg',
   width,
   height,
   withBorder,
+  onClick,
 }) => {
   const classes = [
     styles.paper,
@@ -33,7 +35,7 @@ const Paper: React.FC<PaperProps> = ({
   };
 
   return (
-    <div className={classes} style={style}>
+    <div className={classes} style={style} onClick={onClick}>
       {children}
     </div>
   );

@@ -21,6 +21,12 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     enabled: Boolean(documentNumber),
   });
 
+  const today = new Date();
+  const birthDate = new Date(user?.body.birthDay || '');
+
+  const timeDiff = Math.abs(today.getTime() - birthDate.getTime());
+  const age = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365.25));
+
   const registerUser = async ({
     documentType,
     documentNumber,
@@ -55,6 +61,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       value={{
         documentType,
         phone,
+        userAge: age,
         user: documentNumber ? user?.body : undefined,
         userId: documentNumber,
         userIsFetching: false,

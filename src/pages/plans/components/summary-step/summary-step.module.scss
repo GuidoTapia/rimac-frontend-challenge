@@ -1,0 +1,91 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+.summaryStep {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 48px;
+  margin-top: 32px;
+  width: 100%;
+
+  &__title {
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: $spacing-lg;
+    padding: 24px 32px;
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__headerLabel {
+    font-size: 10px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: $neutral-color;
+  }
+
+  &__headerInfo {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-md;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__userName {
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $neutral-color;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__itemTitle {
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__itemLabel {
+    font-size: 14px;
+    font-weight: $font-weight-normal;
+    color: $neutral-color;
+  }
+}

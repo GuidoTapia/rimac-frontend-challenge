@@ -9,6 +9,7 @@ export interface PlanOptionProps {
   descriptionItems: string[];
   isSelected?: boolean;
   discountedPrice?: number;
+  onSelect?: () => void;
 }
 
 const PlanOption: React.FC<PlanOptionProps> = ({
@@ -18,6 +19,7 @@ const PlanOption: React.FC<PlanOptionProps> = ({
   descriptionItems,
   isSelected,
   discountedPrice,
+  onSelect,
 }) => {
   return (
     <Paper width='280px' height='680px' withBorder={isSelected}>
@@ -52,7 +54,7 @@ const PlanOption: React.FC<PlanOptionProps> = ({
             ))}
           </ul>
         </div>
-        <Button size='medium' fullWidth>
+        <Button size='medium' fullWidth onClick={onSelect}>
           Seleccionar Plan
         </Button>
       </div>
