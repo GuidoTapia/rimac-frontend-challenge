@@ -1,24 +1,24 @@
 import { paths } from '../paths';
 
 export const userIdStorageKey = 'USER_ID';
-export const userInfoStorageKey = 'USER_INFO';
+export const documentTypeStorageKey = 'DOCUMENT_TYPE';
 export const userPhoneStorageKey = 'USER_PHONE';
 
 export const storageUserInfo = async ({
   userId,
-  userInfo,
-  userPhone,
+  documentType,
+  phone,
 }: {
   userId?: string;
-  userInfo?: string;
-  userPhone?: string;
+  documentType?: string;
+  phone?: string;
 }) => {
   if (userId !== undefined)
     await localStorage.setItem(userIdStorageKey, userId);
-  if (userInfo !== undefined)
-    await localStorage.setItem(userInfoStorageKey, userInfo);
-  if (userPhone !== undefined)
-    await localStorage.setItem(userPhoneStorageKey, userPhone);
+  if (documentType !== undefined)
+    await localStorage.setItem(documentTypeStorageKey, documentType);
+  if (phone !== undefined)
+    await localStorage.setItem(userPhoneStorageKey, phone);
 };
 
 export function getUserId() {
@@ -27,8 +27,8 @@ export function getUserId() {
   return userId ?? '';
 }
 
-export function getUserInfo() {
-  const userInfo = localStorage.getItem(userInfoStorageKey);
+export function getDocumentType() {
+  const userInfo = localStorage.getItem(documentTypeStorageKey);
 
   return userInfo ?? '';
 }

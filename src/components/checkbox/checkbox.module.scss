@@ -6,7 +6,8 @@
   display: grid;
   grid-template-columns: 1.15rem auto;
   align-items: center;
-  gap: $spacing-md;
+  grid-column-gap: $spacing-md;
+  grid-row-gap: 0px;
   cursor: pointer;
   color: $dark-color;
 
@@ -53,9 +54,8 @@
   }
   &__error {
     grid-column: 2 / -1;
-    font-size: 0.85rem;
+    font-size: 10px;
     color: $danger-color;
-    margin-top: $spacing-xs;
   }
 
   &__input:checked + .checkbox__box {

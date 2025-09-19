@@ -13,7 +13,7 @@ export interface LogoIconProps {
 
 const RimacLogo: React.FC<LogoIconProps> = ({
   color = 'primary',
-  variant = 'horizontal',
+  variant = 'default',
   className,
 }) => {
   return variant === 'horizontal' ? (

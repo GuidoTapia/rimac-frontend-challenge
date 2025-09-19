@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ variant = 'default' }) => {
     <div className={withVariant('layout')}>
       <header className={withVariant('layout__header')}>
         <div className={styles[`layout__header-left`]}>
-          <RimacLogo color='dark' />
+          <RimacLogo color='primary' variant='default' />
         </div>
         <div className={styles[`layout__header-right`]}>
           <div className={styles[`layout__header-slogan`]}>
@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ variant = 'default' }) => {
       {variant === 'login' && (
         <footer className={styles.layout__footer}>
           <div className={styles[`layout__footer-left`]}>
-            <RimacLogo color='light' />
+            <RimacLogo color='light' variant='horizontal' />
           </div>
           <div className={styles[`layout__footer-separator`]} />
           <div className={styles[`layout__footer-right`]}>

@@ -2,20 +2,49 @@ import { type ReactNode, useState } from 'react';
 
 import { UserContext } from './user-context';
 import { paths } from '../paths';
-
-const userIdStorageKey = 'USER_ID';
+import { tsr } from '../../api/api-client';
+import {
+  getDocumentType,
+  getUserPhone,
+  getUserId,
+  storageUserInfo,
+} from './user-storage';
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [userId, setUserId] = useState(
-    localStorage.getItem(userIdStorageKey) || ''
-  );
-  const [user, setUser] = useState({ name: 'John Doe' });
+  const [documentType, setDocumentType] = useState(getDocumentType() || '');
+  const [documentNumber, setDocumentNumber] = useState(getUserId() || '');
+  const [phone, setPhone] = useState(getUserPhone() || '');
 
-  const fetchUser = async () => {};
+  const { data: user } = tsr.users.useQuery({
+    queryKey: ['users', documentNumber],
+    queryData: {},
+    enabled: Boolean(documentNumber),
+  });
+
+  const registerUser = async ({
+    documentType,
+    documentNumber,
+    phone,
+  }: {
+    documentType: string;
+    documentNumber: string;
+    phone: string;
+  }) => {
+    storageUserInfo({
+      userId: documentNumber,
+      documentType,
+      phone,
+    });
+    setDocumentType(documentType);
+    setDocumentNumber(documentNumber);
+    setPhone(phone);
+    window.location.href = paths.plans;
+  };
 
   const logOut = () => {
-    setUserId('');
-    setUser({ name: '' });
+    setDocumentNumber('');
+    setDocumentType('');
+    setPhone('');
 
     localStorage.clear();
     window.location.href = paths.home;
@@ -24,12 +53,14 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   return (
     <UserContext.Provider
       value={{
-        user,
-        userId,
+        documentType,
+        phone,
+        user: documentNumber ? user?.body : undefined,
+        userId: documentNumber,
         userIsFetching: false,
-        fetchUser,
+        registerUser,
         logOut,
-        isActive: Boolean(userId && user),
+        isActive: Boolean(documentNumber && user),
       }}
     >
       {children}
