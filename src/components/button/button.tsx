@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './button.module.scss';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'danger';
+export type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'outline'
+  | 'danger'
+  | 'dark';
 export type ButtonSize = 'small' | 'medium' | 'large' | 'x-large';
 
 export interface ButtonProps
