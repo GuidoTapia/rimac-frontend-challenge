@@ -1,13 +1,15 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
 import './styles/main.scss';
-import App from './App.tsx';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Root element not found');
+import { router } from './router';
+import { UserProvider } from './shared/user/user-provider';
 
-createRoot(rootElement).render(
+createRoot(document.querySelector('#root') as Element).render(
   <StrictMode>
-    <App />
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
   </StrictMode>
 );

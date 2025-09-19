@@ -3,13 +3,13 @@ import styles from './layout.module.scss';
 import Phone from '../../assets/phone.svg';
 import RimacLogo from '../rimac-logo/rimac-logo';
 import TextButton from '../text-button/text-button';
+import { Outlet } from 'react-router-dom';
 
 export interface LayoutProps {
   variant?: 'default' | 'login';
-  children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ variant = 'default', children }) => {
+const Layout: React.FC<LayoutProps> = ({ variant = 'default' }) => {
   const withVariant = (base: string) =>
     [styles[base], styles[`${base}--${variant}`]].filter(Boolean).join(' ');
 
@@ -29,7 +29,9 @@ const Layout: React.FC<LayoutProps> = ({ variant = 'default', children }) => {
         </div>
       </header>
 
-      <main className={styles.layout__content}>{children}</main>
+      <main className={styles.layout__content}>
+        <Outlet />
+      </main>
 
       {variant === 'login' && (
         <footer className={styles.layout__footer}>
