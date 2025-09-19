@@ -2,152 +2,159 @@
 
 ## Overview
 
-This document outlines the recommended file structure for the Rimac Frontend Challenge, focusing on feature-based organization with shared resources at the root level.
+This document outlines the actual file structure for the Rimac Frontend Challenge, showing how the project is organized with a component-based architecture and page-level organization.
 
-## Recommended Structure
+## Actual Structure
 
 ```
 src/
-├── components/                 # Shared reusable components
-│   ├── ui/                    # Basic UI components
-│   │   ├── Button/
-│   │   │   ├── Button.tsx
-│   │   │   └── Button.scss
-│   │   ├── Input/
-│   │   │   ├── Input.tsx
-│   │   │   └── Input.scss
-│   │   └── Card/
-│   │       ├── Card.tsx
-│   │       └── Card.scss
-│   └── layout/                # Layout components
-│       ├── Header/
-│       │   ├── Header.tsx
-│       │   └── Header.scss
-│       ├── Footer/
-│       │   ├── Footer.tsx
-│       │   └── Footer.scss
-│       └── Sidebar/
-│           ├── Sidebar.tsx
-│           └── Sidebar.scss
-├── features/                  # Feature-based modules
-│   ├── auth/                  # Authentication feature
-│   │   ├── components/
-│   │   │   ├── LoginForm/
-│   │   │   │   ├── LoginForm.tsx
-│   │   │   │   └── LoginForm.scss
-│   │   │   └── UserProfile/
-│   │   │       ├── UserProfile.tsx
-│   │   │       └── UserProfile.scss
-│   │   ├── hooks/
-│   │   │   └── useAuth.ts
-│   │   ├── services/
-│   │   │   └── authService.ts
-│   │   └── types/
-│   │       └── auth.types.ts
-│   ├── insurance/             # Insurance plans feature
-│   │   ├── components/
-│   │   │   ├── PlanCard/
-│   │   │   │   ├── PlanCard.tsx
-│   │   │   │   └── PlanCard.scss
-│   │   │   ├── PlanList/
-│   │   │   │   ├── PlanList.tsx
-│   │   │   │   └── PlanList.scss
-│   │   │   └── PlanComparison/
-│   │   │       ├── PlanComparison.tsx
-│   │   │       └── PlanComparison.scss
-│   │   ├── hooks/
-│   │   │   └── usePlans.ts
-│   │   ├── services/
-│   │   │   └── planService.ts
-│   │   └── types/
-│   │       └── plan.types.ts
-│   └── user/                  # User management feature
-│       ├── components/
-│       │   ├── UserCard/
-│       │   │   ├── UserCard.tsx
-│       │   │   └── UserCard.scss
-│       │   └── UserForm/
-│       │       ├── UserForm.tsx
-│       │       └── UserForm.scss
-│       ├── hooks/
-│       │   └── useUser.ts
-│       ├── services/
-│       │   └── userService.ts
-│       └── types/
-│           └── user.types.ts
-├── pages/                     # Page components (route-level)
-│   ├── HomePage/
-│   │   ├── HomePage.tsx
-│   │   └── HomePage.scss
-│   ├── PlansPage/
-│   │   ├── PlansPage.tsx
-│   │   └── PlansPage.scss
-│   └── ProfilePage/
-│       ├── ProfilePage.tsx
-│       └── ProfilePage.scss
-├── hooks/                     # Global custom hooks
-│   ├── useApi.ts
-│   └── useLocalStorage.ts
-├── services/                  # Global services
-│   ├── api/
-│   │   ├── client.ts
-│   │   └── endpoints.ts
-│   └── storage/
-│       └── localStorage.ts
-├── store/                     # Global state management
-│   ├── context/
-│   │   └── AppContext.tsx
-│   └── reducers/
-│       └── appReducer.ts
-├── styles/                    # Global styles
-│   ├── abstracts/
-│   │   ├── _variables.scss
+├── api/                       # API configuration and services
+│   ├── api-client.ts         # Main API client configuration
+│   └── services/             # API service definitions
+│       ├── plans/
+│       │   └── plans.dto.ts  # Plan data transfer objects
+│       └── users/
+│           └── users.dto.ts  # User data transfer objects
+├── assets/                   # Static assets
+│   ├── arrow-back.svg
+│   ├── family.png
+│   ├── family.svg
+│   ├── IcAddUserLight.svg
+│   ├── IcHomeLight.svg
+│   ├── IcHospitalLight.svg
+│   ├── IcProtectionLight.svg
+│   ├── phone.svg
+│   └── react.svg
+├── components/               # Shared reusable UI components
+│   ├── button/              # Button component
+│   │   ├── button.module.scss
+│   │   ├── button.test.tsx
+│   │   └── button.tsx
+│   ├── checkbox/            # Checkbox component
+│   │   ├── checkbox.module.scss
+│   │   ├── checkbox.test.tsx
+│   │   └── checkbox.tsx
+│   ├── dropdown/            # Dropdown component
+│   │   ├── dropdown.module.scss
+│   │   ├── dropdown.test.tsx
+│   │   └── dropdown.tsx
+│   ├── hyperlink/           # Hyperlink component
+│   │   ├── hyperlink.module.scss
+│   │   ├── hyperlink.test.tsx
+│   │   └── hyperlink.tsx
+│   ├── layout/              # Layout component
+│   │   ├── layout.module.scss
+│   │   └── layout.tsx
+│   ├── pagination/          # Pagination component
+│   │   └── pagination.module.scss
+│   │   └── pagination.tsx
+│   ├── paper/               # Paper/Card component
+│   │   ├── paper.module.scss
+│   │   └── paper.tsx
+│   ├── rimac-logo/          # Rimac logo component
+│   │   ├── Logo.svg
+│   │   ├── rimac-logo.module.scss
+│   │   └── rimac-logo.tsx
+│   ├── stepper/             # Stepper component
+│   │   ├── stepper.module.scss
+│   │   ├── stepper.test.tsx
+│   │   └── stepper.tsx
+│   ├── tag/                 # Tag component
+│   │   ├── tag.module.scss
+│   │   └── tag.tsx
+│   ├── text-button/         # Text button component
+│   │   ├── text-button.module.scss
+│   │   ├── text-button.test.tsx
+│   │   └── text-button.tsx
+│   ├── text-input/          # Text input component
+│   │   ├── text-input.module.scss
+│   │   ├── text-input.test.tsx
+│   │   └── text-input.tsx
+│   └── index.ts             # Component exports
+├── config/                  # Configuration files
+│   └── api.ts              # API configuration
+├── pages/                   # Page components (route-level)
+│   ├── home/               # Home page
+│   │   ├── home.module.scss
+│   │   └── home.tsx
+│   ├── plans/              # Plans page with sub-components
+│   │   ├── components/     # Page-specific components
+│   │   │   ├── cotization-option/
+│   │   │   │   ├── cotization-option.module.scss
+│   │   │   │   └── cotization-option.tsx
+│   │   │   ├── cotization-options/
+│   │   │   │   ├── cotization-options.module.scss
+│   │   │   │   └── cotization-options.tsx
+│   │   │   ├── plan-option/
+│   │   │   │   ├── plan-option.module.scss
+│   │   │   │   └── plan-option.tsx
+│   │   │   ├── plan-options/
+│   │   │   │   ├── plan-options.module.scss
+│   │   │   │   └── plan-options.tsx
+│   │   │   └── summary-step/
+│   │   │       ├── summary-step.module.scss
+│   │   │       └── summary-step.tsx
+│   │   ├── plans.module.scss
+│   │   └── plans.tsx
+│   └── index.ts            # Page exports
+├── shared/                 # Shared utilities and contexts
+│   ├── paths.ts           # Route path constants
+│   └── user/              # User-related shared logic
+│       ├── use-auth.tsx   # Authentication hook
+│       ├── user-context.tsx
+│       ├── user-provider.tsx
+│       └── user-storage.ts
+├── styles/                # Global Sass stylesheets
+│   ├── abstracts/         # Sass abstractions
+│   │   ├── _functions.scss
 │   │   ├── _mixins.scss
-│   │   └── _functions.scss
-│   ├── base/
+│   │   └── _variables.scss
+│   ├── base/              # Base styles
 │   │   ├── _reset.scss
-│   │   ├── _typography.scss
-│   │   └── _base.scss
-│   ├── components/
+│   │   └── _typography.scss
+│   ├── components/        # Global component styles
 │   │   └── _globals.scss
-│   ├── layout/
-│   │   ├── _grid.scss
-│   │   └── _layout.scss
-│   └── main.scss
-├── types/                     # Global TypeScript types
-│   ├── api.types.ts
-│   └── common.types.ts
-├── utils/                     # Utility functions
-│   ├── formatters.ts
-│   ├── validators.ts
-│   └── constants.ts
-├── __tests__/                 # Test files
-│   ├── components/
-│   ├── features/
-│   ├── pages/
-│   └── utils/
-├── App.tsx
-├── main.tsx
-└── vite-env.d.ts
+│   ├── layout/            # Layout styles
+│   │   └── _grid.scss
+│   └── main.scss          # Main stylesheet entry point
+├── test/                  # Test configuration and utilities
+│   ├── mocks/             # Mock data and handlers
+│   │   ├── handlers.ts
+│   │   └── server.ts
+│   ├── setup.ts           # Test setup configuration
+│   └── test-utils.tsx     # Testing utilities
+├── index.css              # Global CSS imports
+├── main.tsx               # Application entry point
+├── router.tsx             # React Router configuration
+└── vite-env.d.ts          # Vite environment type definitions
 ```
 
 ## Structure Principles
 
-### 1. Feature-Based Organization
+### 1. Component-Based Architecture
 
-- **Each feature is self-contained** with its own components, hooks, services, and types
-- **Features are independent** and can be developed/modified without affecting others
-- **Clear boundaries** between different business domains
+- **Shared Components** - Reusable UI components in `/components` with their own styles and tests
+- **Page Components** - Route-level components in `/pages` with page-specific sub-components
+- **BEM Methodology** - Consistent CSS class naming using Block\_\_Element--Modifier pattern
+- **Module Styles** - Each component has its own `.module.scss` file for scoped styling
 
-### 2. Shared Resources at Root Level
+### 2. Page-Level Organization
 
-- **Components/** - Reusable UI components used across features
-- **Hooks/** - Global custom hooks for common functionality
-- **Services/** - API clients and global services
-- **Utils/** - Pure utility functions
-- **Types/** - Global TypeScript interfaces
+- **Home Page** - Simple page with form components
+- **Plans Page** - Complex page with multiple sub-components for different steps
+- **Sub-components** - Page-specific components organized within the page directory
+- **Clear Separation** - Each page manages its own state and sub-components
 
-### 3. Minimal Index Files
+### 3. Shared Resources
 
-- **Avoid index files at every level** - Only use them when they provide clear value
-- **Direct imports preferred** - Import components directly from their files
+- **API Layer** - Centralized API configuration and DTOs in `/api`
+- **Shared Logic** - Common utilities and contexts in `/shared`
+- **Global Styles** - Sass architecture with abstracts, base, components, and layout
+- **Test Configuration** - Centralized test setup and utilities
+
+### 4. Development Patterns
+
+- **TypeScript First** - Strong typing throughout the application
+- **Testing** - Component tests co-located with components
+- **SCSS Modules** - Scoped styling to prevent conflicts
+- **Clean Imports** - Centralized exports through index files where beneficial

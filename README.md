@@ -112,16 +112,37 @@ pnpm preview
 
 ```
 src/
-├── components/          # Shared UI components
-├── features/           # Feature-based modules
-├── pages/              # Page components
-├── hooks/              # Custom React hooks
-├── services/           # API services
-├── store/              # State management
-├── styles/             # Sass stylesheets
-├── types/              # TypeScript types
-├── utils/              # Utility functions
-└── __tests__/          # Test files
+├── api/                # API configuration and DTOs
+├── assets/             # Static assets (images, icons, SVGs)
+├── components/         # Shared reusable UI components
+│   ├── button/        # Button component with tests and styles
+│   ├── checkbox/      # Checkbox component
+│   ├── dropdown/      # Dropdown component
+│   ├── hyperlink/     # Hyperlink component
+│   ├── layout/        # Layout component
+│   ├── paper/         # Paper/Card component
+│   ├── stepper/       # Stepper component
+│   ├── tag/           # Tag component
+│   ├── text-button/   # Text button component
+│   ├── text-input/    # Text input component
+│   └── rimac-logo/    # Rimac logo component
+├── pages/              # Page components (route-level)
+│   ├── home/          # Home page with form
+│   └── plans/         # Plans page with sub-components
+│       └── components/ # Page-specific components
+│           ├── cotization-options/
+│           ├── plan-options/
+│           └── summary-step/
+├── shared/             # Shared utilities and contexts
+│   ├── paths.ts       # Route path constants
+│   └── user/          # User authentication logic
+├── styles/             # Global Sass stylesheets
+│   ├── abstracts/     # Variables, mixins, functions
+│   ├── base/          # Reset and typography
+│   ├── components/    # Global component styles
+│   └── layout/        # Grid and layout utilities
+├── test/               # Test configuration and utilities
+└── config/             # Configuration files
 ```
 
 ## 🎨 Styling
@@ -132,6 +153,23 @@ The project uses Sass with BEM methodology:
 - **Mixins**: Responsive design, flexbox utilities
 - **Components**: Reusable UI components
 - **Layout**: Grid system and layout utilities
+
+## 🏗️ Architecture
+
+### Component Structure
+
+- **Shared Components**: Reusable UI components in `/components` with co-located tests and styles
+- **Page Components**: Route-level components in `/pages` with page-specific sub-components
+- **BEM Naming**: Consistent CSS class naming using Block\_\_Element--Modifier pattern
+- **SCSS Modules**: Scoped styling to prevent conflicts between components
+
+### Key Features
+
+- **TypeScript First**: Strong typing throughout the application
+- **React Hook Form**: Form management with validation
+- **React Router**: Client-side routing with proper SPA configuration
+- **MSW**: API mocking for development and testing
+- **Responsive Design**: Mobile-first approach with breakpoint-based styling
 
 ## 🧪 Testing Strategy
 
@@ -181,17 +219,15 @@ VITE_API_BASE_URL=https://your-backend-url.com
 
 ## 🔄 CI/CD & Workflow
 
-This project uses GitHub Actions for continuous integration and deployment:
+This project uses GitHub Actions for continuous integration:
 
 - **PR Checks**: Automated linting, testing, type checking, and building on every pull request
 - **Security Audit**: Automated security vulnerability scanning
-- **Auto Deploy**: Automatic deployment to GitHub Pages on merge to main
 - **Branch Protection**: Main branch is protected with required status checks
 
 ### Workflow Files
 
 - [PR Checks](.github/workflows/pr-checks.yml) - Quality checks for pull requests
-- [Deploy](.github/workflows/deploy.yml) - Production deployment
 
 ## 📖 Documentation
 
