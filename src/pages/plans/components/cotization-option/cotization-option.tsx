@@ -25,12 +25,7 @@ const CotizationOption: React.FC<CotizationOptionProps> = ({
     .join(' ');
 
   return (
-    <Paper
-      width='256px'
-      height='212px'
-      withBorder={isSelected}
-      onClick={onClick}
-    >
+    <Paper height='212px' withBorder={isSelected} onClick={onClick}>
       <div className={styles['cotization-option__container']}>
         <div className={styles['cotization-option__header']}>
           <div className={radioCheckboxClasses} />

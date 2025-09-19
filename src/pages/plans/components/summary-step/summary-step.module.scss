@@ -9,6 +9,10 @@
   margin-top: 32px;
   width: 100%;
 
+  @media (max-width: $breakpoint-mobile) {
+    margin-top: 0;
+  }
+
   &__title {
     font-size: 32px;
     font-weight: $font-weight-bold;

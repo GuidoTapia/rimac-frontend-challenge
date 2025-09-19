@@ -55,10 +55,18 @@ const Plans: React.FC = () => {
   return (
     <div className={styles.plans}>
       <div className={styles.plans__header}>
+        <div className={styles.plans__header__backButton}>
+          <TextButton
+            variant='secondary'
+            onClick={handleBack}
+            icon={<img src={ArrowBack} />}
+          />
+        </div>
         <Stepper steps={steps} activeIndex={activeStep} />
       </div>
       <div className={styles.plans__container}>
         <TextButton
+          className={styles.plans__backButton}
           variant='secondary'
           onClick={handleBack}
           icon={<img src={ArrowBack} />}

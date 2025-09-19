@@ -10,6 +10,10 @@
     justify-content: center;
     height: 56px;
     background-color: $neutral-light-color;
+    padding: 0 $spacing-xl;
+    @media (max-width: $breakpoint-mobile) {
+      justify-content: space-between;
+    }
   }
 
   &__container {
@@ -19,6 +23,9 @@
     justify-content: flex-start;
     padding: $spacing-xxl 120px;
     overflow: visible;
+    @media (max-width: $breakpoint-mobile) {
+      padding: 32px 24px;
+    }
   }
 
   &__content {
@@ -28,5 +35,16 @@
     justify-content: flex-start;
     gap: 32px;
     width: 100%;
+  }
+  &__backButton {
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+  &__header__backButton {
+    display: none;
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+    }
   }
 }
